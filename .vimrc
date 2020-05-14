@@ -1,5 +1,12 @@
+" links
+" https://github.com/VundleVim/Vundle.vim
+" https://vim.rtorr.com/
+
+
+
 " listen line number
 set number
+" enable mouse click
 set mouse=a
 
 " set UTF-8 encoding
@@ -36,10 +43,15 @@ autocmd! VimEnter * NERDTree | wincmd w
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Plugins
 set rtp+=~/.vim/bundle/Vundle.vim
 filetype off
 call vundle#begin()
 Plugin 'scrooloose/nerdtree'
+Plugin 'ntpeters/vim-better-whitespace'
+let g:better_whitespace_enabled=1
+"let g:strip_whitespace_on_save = 1
+let g:strip_whitespace_on_save=1
 "Plugin 'bronson/vim-trailing-whitespace'
 "colorscheme horizon
 call vundle#end()
